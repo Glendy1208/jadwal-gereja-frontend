@@ -4,8 +4,6 @@ import AdminLayout from "../layouts/AdminLayout";
 // Import halaman-halaman dari folder pages
 import Home from "../pages/admin/Home";
 import PelayanTuhan from "../pages/admin/PelayanTuhan";
-import Kompetensi from "../pages/admin/Kompetensi";
-import KompetensiPelayan from "../pages/admin/KompetensiPelayan";
 import JadwalIbadah from "../pages/admin/JadwalIbadah";
 
 export default function AppRoutes() {
@@ -23,14 +21,6 @@ export default function AppRoutes() {
         <Route 
           path="/admin/pelayan-tuhan" 
           element={<AdminLayout><PelayanTuhan /></AdminLayout>} 
-        />
-        <Route 
-          path="/admin/kompetensi" 
-          element={<AdminLayout><Kompetensi /></AdminLayout>} 
-        />
-        <Route 
-          path="/admin/kompetensi-pelayan" 
-          element={<AdminLayout><KompetensiPelayan /></AdminLayout>} 
         />
         <Route 
           path="/admin/jadwal-ibadah" 

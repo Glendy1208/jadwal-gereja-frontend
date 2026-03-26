@@ -1,4 +1,11 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+const getNavLinkClass = ({ isActive }) =>
+  `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors font-medium ${
+    isActive
+      ? "bg-blue-500 text-white shadow"
+      : "text-gray-300 hover:bg-gray-700 hover:text-white"
+  }`;
 
 export default function AdminSidebar() {
   return (
@@ -9,19 +16,19 @@ export default function AdminSidebar() {
       
       <nav className="flex-1 px-4 py-6 space-y-2">
         {/* Menu Home */}
-        <Link to="/admin/home" className="flex items-center gap-3 px-4 py-3 hover:bg-gray-700 hover:text-white text-gray-300 rounded-lg transition-colors">
-          <span className="font-medium">Home</span>
-        </Link>
+        <NavLink to="/admin/home" className={getNavLinkClass}>
+          <span>Home</span>
+        </NavLink>
 
         {/* Menu Pelayan Tuhan */}
-        <Link to="/admin/pelayan-tuhan" className="flex items-center gap-3 px-4 py-3 hover:bg-gray-700 hover:text-white text-gray-300 rounded-lg transition-colors">
-          <span className="font-medium">Pelayan Tuhan</span>
-        </Link>
+        <NavLink to="/admin/pelayan-tuhan" className={getNavLinkClass}>
+          <span>Pelayan Tuhan</span>
+        </NavLink>
         
         {/* Menu Jadwal Ibadah */}
-        <Link to="/admin/jadwal-ibadah" className="flex items-center gap-3 px-4 py-3 hover:bg-gray-700 hover:text-white text-gray-300 rounded-lg transition-colors">
-          <span className="font-medium">Jadwal Ibadah</span>
-        </Link>
+        <NavLink to="/admin/jadwal-ibadah" className={getNavLinkClass}>
+          <span>Jadwal Ibadah</span>
+        </NavLink>
       </nav>
       
       <div className="p-4 border-t border-gray-700">
