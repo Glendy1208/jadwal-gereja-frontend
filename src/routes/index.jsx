@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AdminLayout from "../layouts/AdminLayout";
 
-// Import halaman-halaman admin
+// Import halaman-halaman
+import Login from "../pages/Login";
 import Dashboard from "../pages/admin/Dashboard";
 import PelayanTuhan from "../pages/admin/PelayanTuhan";
 import JadwalIbadah from "../pages/admin/JadwalIbadah";
@@ -11,6 +12,9 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Login Route */}
+        <Route path="/login" element={<Login />} />
+
         {/* Admin Routes */}
         <Route
           path="/admin/dashboard"
@@ -45,8 +49,8 @@ export default function AppRoutes() {
           }
         />
 
-        {/* Default redirect to dashboard */}
-        <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+        {/* Default redirect to login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );
